@@ -23,6 +23,7 @@ function createCard (product, index) {
     product.html.image.src = product.img;
 
     product.html.buyicon = document.createElement("i");
+    product.html.buyicon.textContent = " Ajouter au panier";
     product.html.buyicon.className = "fas fa-shopping-cart";
     product.html.buyicon.id = "buyicon"+index;
 
@@ -45,7 +46,7 @@ function addlike(i) {
         products[i].like = true;
         products[i].html.likeicon.className = "fas fa-heart";
         localStorage.setItem("Likes", products[i].name);
-        document.getElementById("shownwishlist").insertAdjacentHTML('afterbegin', localStorage.getItem("Likes"));
+        document.getElementById("shownwishlist").insertAdjacentHTML('afterbegin', localStorage.getItem("Likes")+"</br>");
     }
     else{
         products[i].like = false;
