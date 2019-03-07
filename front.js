@@ -1,79 +1,38 @@
-// $.get('http://localhost:3000/', function(response, error) {
-    // console.log()
+$.get('http://localhost:3000/', function(response, error) {
+    console.log()
 
-    // var products = response;
+    var products = response;
 
-    // console.log(response);
+    console.log(response);
 
-    // products.forEach(function (prod, i) {
+    response.forEach(function (prod, i) {
     
-    //     createCard(prod, i);
-    
-    
-    //      document.getElementById("likeicon"+i).addEventListener('click', function () {
-    //         addlike(i);
-    //      });
+        createCard(prod, i);
     
     
-    //      document.getElementById("buyicon"+i).addEventListener('click', function () {
-    //         buying(i);
-    //      });
-    // });
+         document.getElementById("likeicon"+i).addEventListener('click', function () {
+            addlike(i);
+         });
     
-    // document.getElementById("iconpanier").addEventListener('click', function () {
-    //     if (document.getElementById("shownpanier").style.visibility === "visible") {
-    //         document.getElementById("shownpanier").style.visibility = "hidden";
-    //     }
-    //     else if (document.getElementById("shownpanier").style.visibility === "hidden") {
-    //         document.getElementById("shownpanier").style.visibility = "visible";
-    //     }
-    //     else {
-    //         document.getElementById("shownpanier").style.visibility = "visible";
-    //     }
-    // });
     
-    // document.getElementById("iconwishlist").addEventListener('click', function () {
-    //     if (document.getElementById("shownwishlist").style.visibility === "visible") {
-    //         document.getElementById("shownwishlist").style.visibility = "hidden";
-    //     }
-    //     else if (document.getElementById("shownwishlist").style.visibility === "hidden") {
-    //         document.getElementById("shownwishlist").style.visibility = "visible";
-    //     }
-    //     else {
-    //         document.getElementById("shownwishlist").style.visibility = "visible";
-    //     }
-    // });
-
-    $.post('http://localhost:3000/', function (response) {
-
-        response.forEach(function (prod, i) {
+         document.getElementById("buyicon"+i).addEventListener('click', function () {
+            buying(i);
+         });
+    });
     
-            createCard(prod, i);
-        
-        
-             document.getElementById("likeicon"+i).addEventListener('click', function () {
-                addlike(i);
-             });
-        
-        
-             document.getElementById("buyicon"+i).addEventListener('click', function () {
-                buying(i);
-             });
-        });
-
-        document.getElementById("iconpanier").addEventListener('click', function () {
-            if (document.getElementById("shownpanier").style.visibility === "visible") {
-                document.getElementById("shownpanier").style.visibility = "hidden";
-            }
-            else if (document.getElementById("shownpanier").style.visibility === "hidden") {
-                document.getElementById("shownpanier").style.visibility = "visible";
-            }
-            else {
-                document.getElementById("shownpanier").style.visibility = "visible";
-            }
-        });
-
-        document.getElementById("iconwishlist").addEventListener('click', function () {
+    document.getElementById("iconpanier").addEventListener('click', function () {
+        if (document.getElementById("shownpanier").style.visibility === "visible") {
+            document.getElementById("shownpanier").style.visibility = "hidden";
+        }
+        else if (document.getElementById("shownpanier").style.visibility === "hidden") {
+            document.getElementById("shownpanier").style.visibility = "visible";
+        }
+        else {
+            document.getElementById("shownpanier").style.visibility = "visible";
+        }
+    });
+    
+    document.getElementById("iconwishlist").addEventListener('click', function () {
         if (document.getElementById("shownwishlist").style.visibility === "visible") {
             document.getElementById("shownwishlist").style.visibility = "hidden";
         }
@@ -85,45 +44,9 @@
         }
     });
 
-    });
-
-// });
 
 
-
-// function Product(name, price, img, like, html) {
-
-//     this.name = name;
-//     this.price = price;
-//     this.img = img;
-//     this.like = like;
-//     this.html = html;
-
-//     // this.addlike = function () {
-//     //     if(this.like == false) {
-//     //         this.like = true;
-//     //         this.html.likeicon.className = "fas fa-heart";
-//     //         localStorage.setItem("Likes", this.name);
-//     //         document.getElementById("shownwishlist").insertAdjacentHTML('afterbegin', localStorage.getItem("Likes")+"</br>");
-//     //     }
-//     //     else {
-//     //         this.like = false;
-//     //         this.html.likeicon.className = "far fa-heart";
-//     //         localStorage.removeItem("Likes", this.name);
-//     //     }
-    
-//     //     console.log("j\'aime "+this.name+" est "+this.like)
-//     // }
-// }
-
-// var bag = new Product("sac", 100, "https://mosaic03.ztat.net/vgs/media/catalog-sm/EV/45/1H/0D/6Q/11/EV451H0D6-Q11@11.jpg", true);
-// var tshirt = new Product("t-shirt", 20, "https://blog.codepen.io/wp-content/uploads/2017/03/codepen.jpg", false);
-// var shoes = new Product("chaussures", 50, "https://brightledshoes.com/wp-content/uploads/2017/01/gold-led-light-up-shoes.jpg", false);
-
-
-
-
-// var products = [bag, tshirt, shoes];
+});
 
 function createCard (product, index) {
 
@@ -176,42 +99,3 @@ function buying(i) {
     console.log(localStorage);
     document.getElementById("shownpanier").insertAdjacentHTML('afterbegin', localStorage.getItem("Panier")+"</br>");
 }
-
-// products.forEach(function (prod, i) {
-    
-//     createCard(prod, i);
-
-
-//      document.getElementById("likeicon"+i).addEventListener('click', function () {
-//         addlike(i);
-//      });
-
-
-//      document.getElementById("buyicon"+i).addEventListener('click', function () {
-//         buying(i);
-//      });
-// });
-
-// document.getElementById("iconpanier").addEventListener('click', function () {
-//     if (document.getElementById("shownpanier").style.visibility === "visible") {
-//         document.getElementById("shownpanier").style.visibility = "hidden";
-//     }
-//     else if (document.getElementById("shownpanier").style.visibility === "hidden") {
-//         document.getElementById("shownpanier").style.visibility = "visible";
-//     }
-//     else {
-//         document.getElementById("shownpanier").style.visibility = "visible";
-//     }
-// });
-
-// document.getElementById("iconwishlist").addEventListener('click', function () {
-//     if (document.getElementById("shownwishlist").style.visibility === "visible") {
-//         document.getElementById("shownwishlist").style.visibility = "hidden";
-//     }
-//     else if (document.getElementById("shownwishlist").style.visibility === "hidden") {
-//         document.getElementById("shownwishlist").style.visibility = "visible";
-//     }
-//     else {
-//         document.getElementById("shownwishlist").style.visibility = "visible";
-//     }
-// });
